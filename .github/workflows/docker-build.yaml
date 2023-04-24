@@ -57,7 +57,7 @@ jobs:
           context: ${{ inputs.context }}
           build-args: ${{ inputs.build-args }}
           push: true
-          tags: v1
+          tags: ghcr.io/${{ github.repository }}/open-assistant:latest@${{ steps.build-push.outputs.digest }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
