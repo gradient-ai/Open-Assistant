@@ -1,0 +1,10 @@
+enabled: true
+name: gradient-ai/open-assistant
+image: ghcr.io/gradient-ai/open-assistant:latest
+port: 8008
+healthChecks:
+  readiness:
+    path: /
+resources:
+  replicas: 1
+  instanceType: A6000

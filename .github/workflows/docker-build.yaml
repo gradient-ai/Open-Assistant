@@ -60,3 +60,12 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+      - uses: paperspace/deploy-action@v1.0
+        name: Deploy to Paperspace
+        id: deploy
+        env:
+          PAPERSPACE_API_KEY: ${{ secrets.PAPERSPACE_API_KEY }}
+          CONTAINER_SHA: ${{ steps.set-container-sha.outputs.CONTAINER_SHA }}
+        with:
+          projectId: prpgbppt3
+          image: ghcr.io/${{ github.repository }}/open-assistant:latest@${{ steps.build-push.outputs.digest }}
