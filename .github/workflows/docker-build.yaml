@@ -69,4 +69,4 @@ jobs:
           CONTAINER_SHA: ${{ steps.set-container-sha.outputs.CONTAINER_SHA }}
         with:
           projectId: prpgbppt3
-          image: ghcr.io/${{ github.repository }}/open-assistant:latest@${{ steps.build-push.outputs.digest }}
+          image: ghcr.io/${{ github.repository }}/open-assistant:v1@${{ steps.build-push.outputs.digest }}
