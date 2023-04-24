@@ -57,7 +57,7 @@ jobs:
           context: ${{ inputs.context }}
           build-args: ${{ inputs.build-args }}
           push: true
-          tags: ghcr.io/${{ github.repository }}/open-assistant:v1
+          tags: ghcr.io/open-assistant/deployment:v1
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
@@ -69,4 +69,4 @@ jobs:
           CONTAINER_SHA: ${{ steps.set-container-sha.outputs.CONTAINER_SHA }}
         with:
           projectId: prpgbppt3
-          image: ghcr.io/${{ github.repository }}/open-assistant:v1
+          image: ghcr.io/open-assistant/deployment:v1
